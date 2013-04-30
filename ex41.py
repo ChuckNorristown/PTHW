@@ -34,7 +34,7 @@ def central_corridor():
 		print "you are dead.  Then he eats you."
 		return 'death'
 
-	elif action == "dodgr!":
+	elif action == "dodge!":
 		print "Like a world class boxer you dodge, weave, slip and slide right"
 		print "as the Gothon blaster cranks out a laser past your head."
 		print "In the middle of your artful dodge your foot slips and you"
@@ -166,53 +166,3 @@ def runner(map, start):
 		next = room()
 
 runner(ROOMS, 'central_corridor')
-
-
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
