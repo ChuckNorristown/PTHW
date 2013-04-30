@@ -37,9 +37,9 @@ elif userID > 999999:
 
 else:
 	print """
-	Your username is %r.
-	Your age is %r.
-	Your userID is %r.
+	Your username is %s.
+	Your age is %d.
+	Your userID is %d.
 	""" % (username, age, userID)
 
 
