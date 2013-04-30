@@ -11,8 +11,9 @@ def lowlife():
     print "So you decided to take the cash, I hope you're proud of yourself."
     print "Well, between the cash and credit cards, you've netted about $8000."
     print "What do you plan on doing with your new found wealth?."
+    print "'donate' 'return' or 'shopping spree'"
 
-    next = raw_input(">>> ").lower(), slice()
+    next = raw_input(">>> ").lower()
 
     if next == "donate":
         print "Maybe you aren't the slimeball I thought you were."
@@ -32,7 +33,7 @@ def good_samaritan():
     print "Do you kindly decline the offer, or politely say ,'Thank you' and go on about your buisness?"
     print "'decline' or 'accept'"
 
-    next = raw_input(">>> ").lower(), slice()
+    next = raw_input(">>> ").lower()
 
     if "decline" in next:
         decline()
@@ -55,7 +56,7 @@ def start():
     print "Do you take the money and run, or return the wallet intact."
     print "'take' or 'return'"
 
-    next = raw_input(">>> ").lower(), slice()
+    next = raw_input(">>> ").lower()
 
     if next == "take":
         lowlife()
