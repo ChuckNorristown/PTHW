@@ -47,3 +47,4 @@ pizza_and_beer(8 - 3, 12 + 6)
 
 print "Combining the two, variables and math:"
 pizza_and_beer(amount_of_pizza + 9, amount_of_beer * 12)
+
