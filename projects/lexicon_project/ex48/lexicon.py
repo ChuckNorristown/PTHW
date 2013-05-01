@@ -1,25 +1,35 @@
 directions = ('north', 'south', 'east')
 verbs = ('go', 'kill', 'eat')
-nouns = ('the', 'in', 'of')
+stops = ('the', 'in', 'of')
 nouns = ('bear', 'princess')
 
 def scan(sentence):
     action = []
 
     for word in sentence.split(' '):
-        word = word.lower()
+        
         try:
+            number = int(word)
+            word_tuple = ('number', number)
+            action.append(word_tuple)
+
+        except ValueError:            
+
             if word in directions:
-                action.append('directions', word)
+                word_tuple = ('direction', word)
+                action.append(word_tuple)
             elif word in verbs:
-                action.append('verbs', word)
+                word_tuple = ('verb', word)
+                action.append(word_tuple)
             elif word in stops:
-                action.append('stops', word)
+                word_tuple =('stop', word)
+                action.append(word_tuple)
             elif word in nouns:
-                action.append('nouns', word)
-            elif word.isdigit():
-                action.append('number', int(word))
-        except ValueError:
-            actions.append('error', word)
-        else:
-            return (ERROR, word)
+                word_tuple = ('noun', word)
+                action.append(word_tuple)   
+            else:
+                word_tuple = ('error', word)
+                action.append(word_tuple) 
+
+    return action
+
