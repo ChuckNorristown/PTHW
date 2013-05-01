@@ -4,7 +4,7 @@ except ImportError:
 	from distutils.core import setup 
 
 config = {
-	'description': 'ex 48 project',
+	'description': 'exercise 48 lexicon project',
 	'author': 'Sean Shields',
 	'url': 'URL to get it at.',
 	'download_url': "Where to download it.",
@@ -13,7 +13,7 @@ config = {
 	'install_requires': ['nose'],
 	'packages': ['ex48'],
 	'scripts': [],
-	'name': 'ex48'
+	'name': 'ex48_lexicon_project'
 }
 
 setup(**config)
