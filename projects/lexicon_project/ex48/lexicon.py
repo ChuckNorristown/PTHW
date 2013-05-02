@@ -1,7 +1,7 @@
-directions = ('north', 'south', 'east')
-verbs = ('go', 'kill', 'eat')
-stops = ('the', 'in', 'of')
-nouns = ('bear', 'princess')
+directions = ('north', 'south', 'east', 'west')
+verbs = ('go', 'kill', 'eat', 'sleep')
+stops = ('the', 'in', 'of', 'out')
+nouns = ('bear', 'princess', 'cave', 'castle')
 
 def scan(sentence):
     action = []
@@ -15,16 +15,16 @@ def scan(sentence):
 
         except ValueError:            
 
-            if word in directions:
-                word_tuple = ('direction', word)
+            if word.lower() in directions:
+                word_tuple = ('direction',word)
                 action.append(word_tuple)
-            elif word in verbs:
+            elif word.lower() in verbs:
                 word_tuple = ('verb', word)
                 action.append(word_tuple)
-            elif word in stops:
+            elif word.lower() in stops:
                 word_tuple =('stop', word)
                 action.append(word_tuple)
-            elif word in nouns:
+            elif word.lower() in nouns:
                 word_tuple = ('noun', word)
                 action.append(word_tuple)   
             else:
