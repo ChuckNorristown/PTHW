@@ -1,10 +1,11 @@
-class parserError(Exception): 
+class ParserError(Exception): 
 	pass
 
-class sentence(object):
+class Sentence(object):
 
 	def __init__(self, subject, verb, object):
-		# remember we take ('noun','princess') tuples and convert them self.subject = subject[1]
+		# remember we take ('noun','princess') tuples and convert them 
+		self.subject = subject[1]
 		self.verb = verb[1]
 		self.object = object[1]
 
@@ -67,8 +68,3 @@ def parse_sentence(word_list):
 		return parse_subject(word_list, ('noun', 'player'))
 	else:
 		raise ParserError("Must start with subject, object, or verb not: %s" % start)
-
-result = peek([('verb', 'go'),
-                ('noun', 'princess'),
-                ('direction', 'east')])
-print result
