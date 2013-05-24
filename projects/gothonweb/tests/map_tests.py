@@ -1,10 +1,10 @@
 from nose.tools import *
-from map import Room
+from gothonweb.map import *
 
 def test_room():
-	gold = Room("GoldRoom",
-		        """This room has gold in it you can grab. There's a 
-		        door to the north.""")
+	gold = Room("GoldRoom", 
+		 		"""This room has gold in it you can grab. 
+				   There's a door to the north.""")
 	assert_equal(gold.name, "GoldRoom")
 	assert_equal(gold.paths, {})
 
@@ -36,3 +36,15 @@ def test_gothon_game_map():
 
 	room = START.go('tell a joke')
 	assert_equal(room, laser_weapon_armory)
+
+def test_laser_weapon_armory():
+	assert_equal(laser_weapon_armory.go('0132'), the_bridge)
+	assert_equal(laser_weapon_armory.go('*'), armory_death)
+
+def test_the_bridge():
+	assert_equal(the_bridge.go('throw the bomb'), blow_up)
+	assert_equal(the_bridge.go('slowly place the bomb'), escape_pod)
+
+def test_escape_pod():
+	assert_equal(escape_pod.go('2'), the_end_winner)
+	assert_equal(escape_pod.go('*'), the_end_loser)
